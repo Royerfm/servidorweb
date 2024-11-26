@@ -20,6 +20,6 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -i private_key.pem ec2-user@54.172.108.139 "rm -rf ~/servicio-web && mkdir ~/servicio-web"
-          scp -i private_key.pem -r app/ ec2-user@54.172.108.139:~/servicio-web/
-          ssh -i private_key.pem ec2-user@54.172.108.139 "cd ~/servicio-web && python3 -m pip install -r app/requirements.txt && nohup python3 app/main.py &"
+          ssh -i private_key.pem ec2-user@54.172.108.139 "rm -rf ~/servidorweb && mkdir ~/servidorweb"
+          scp -i private_key.pem -r app/ ec2-user@54.172.108.139:~/servidorweb/
+          ssh -i private_key.pem ec2-user@54.172.108.139 "cd ~/servidorweb && python3 -m pip install -r app/requierements.txt && nohup python3 app/main.py &"
