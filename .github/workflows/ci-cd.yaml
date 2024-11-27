@@ -27,4 +27,4 @@ jobs:
         run: |
           ssh -i private_key.pem ec2-user@98.81.235.62 "rm -rf ~/servidorweb && mkdir ~/servidorweb"
           scp -i private_key.pem -r app/ ec2-user@98.81.235.62:~/servidorweb/
-          ssh -i private_key.pem ec2-user@98.81.235.62 "cd ~/servidorweb && python3 -m pip install -r app/requierements.txt && nohup python3 app/main.py --port=8081 &"
+          ssh -i private_key.pem ec2-user@98.81.235.62 "cd ~/servidorweb && python3 -m pip install -r app/requierements.txt && nohup python3 app/main.py &"
