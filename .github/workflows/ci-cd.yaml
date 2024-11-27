@@ -18,6 +18,11 @@ jobs:
           echo "${{ secrets.EC2_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
 
+      - name: Add EC2 host to known_hosts
+          run: |
+          ssh-keyscan -H 98.81.235.62 >> ~/.ssh/known_hosts
+ 
+
       - name: Deploy to EC2
         run: |
           ssh -i private_key.pem ec2-user@98.81.235.62 "rm -rf ~/servidorweb && mkdir ~/servidorweb"
